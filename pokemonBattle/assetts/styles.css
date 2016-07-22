@@ -163,6 +163,10 @@ html, body {
 	list-style: none;
 }
 
+#tempDropdown{
+	margin: 5%;
+}
+
 #bottomPokemon {
 	width: 50%;
 	height:70%;
@@ -182,7 +186,7 @@ html, body {
 	z-index: 1;
 	width: 50%;
 	height:70%;
-	background-image: url("../images/Psyduck.png");
+	background-image: url("../images/PsyDavid.png");
 	background-size: contain;
 	margin: auto;
 	display: block;
