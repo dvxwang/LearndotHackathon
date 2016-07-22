@@ -166,7 +166,7 @@ html, body {
 #bottomPokemon {
 	width: 50%;
 	height:70%;
-	background-image: url("../images/006.png");
+	background-image: url("../images/Trainer.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	margin: auto;
@@ -391,6 +391,7 @@ and (orientation : portrait) {
 	position: relative;
 	top: 15%;
 	left: 2.5%;
+	transition: width 2s;
 }
 
 #healthTop {
@@ -399,12 +400,12 @@ and (orientation : portrait) {
 
 #battleText {
 	height: 100%;
-	width: 60%;
+	width: 58%;
 	display: table;
 	float: left;
 	font-size: 5.5vmin;
 	text-shadow: 2px 2px 0px #43547A;
-	padding: 1% 1% 1% 1%;
+	padding: 1% 1% 1% 3%;
 	font-family: Pokemon;
 	color: #ECEEED;
 }
@@ -432,7 +433,7 @@ and (orientation : portrait) {
 .menuHalf {
 	width: 45%;
 	font-size: 1.5vw;
-	padding: 2%; 
+	padding: 2% 2% 2% 4%; 
 	border: 2px solid transparent;
 }
 
@@ -440,7 +441,7 @@ and (orientation : portrait) {
 .menuHalf:hover {
     border-radius: 5px;
     border: 2px solid rgb(207,81,50);
-    padding: 2%; 
+    padding: 2% 2% 2% 4%;
 }
 
 

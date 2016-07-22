@@ -132,21 +132,30 @@
 	  	correct: "OR"
 	  },
 	  {
-	  	text: "Foo",
-	  	answerA: "And",
-	  	answerB: "Or",
-	  	answerC: "Assign",
-	  	answerD: "Equal",
-	  	correct: "Or"
+	  	text: "All Javascript promises have which method?",
+	  	answerA: ".next",
+	  	answerB: ".solve",
+	  	answerC: ".catchError",
+	  	answerD: ".then",
+	  	correct: ".then"
 	  },
 	  {
-	  	text: "Bar",
-	  	answerA: "And",
-	  	answerB: "Or",
-	  	answerC: "Assign",
-	  	answerD: "Equal",
-	  	correct: "Or"
+	  	text: "What Pokemon does Tom want to be?",
+	  	answerA: "NOT MR.MIME",
+	  	answerB: "MR. MIME",
+	  	answerC: "MR. MIME",
+	  	answerD: "MR. MIME",
+	  	correct: "NOT MR.MIME"
+	  },
+	  {
+	  	text: "Which is not a main AngularJS component?",
+	  	answerA: "CONTROLLERS",
+	  	answerB: "DIRECTIVES",
+	  	answerC: "OAUTH",
+	  	answerD: "FACTORIES",
+	  	correct: "OAUTH"
 	  }];
+
 	  function populateQuestion(question){
 	  	  curQuestion=question;
 		  document.getElementById("questionText").innerHTML = question.text;
@@ -161,16 +170,16 @@
 				numCorrect++;
 				var widthToSubtract = 30*(3-numCorrect);
 				$('#opponentHP').css('width', widthToSubtract+"%");
-				if (numCorrect===3){
-					
+				if (numCorrect===2){
+					$('#opponentHP').css('background-color', "red");
 				}
 			}
 			else {
 				numWrong++;
 				var widthToSubtract = 50*(2-numWrong);
 				$('#ownHP').css('width', widthToSubtract+"%");
-				if (numWrong===2){
-					
+				if (numWrong===1){
+					$('#ownHP').css('background-color', "red");
 				}
 			}
 			curIndex++;
