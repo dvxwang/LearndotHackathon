@@ -9,6 +9,7 @@
 <body>
 
 
+
 <div id="top">
 	<div class="topHalf">
 		<div class="left">
@@ -30,11 +31,13 @@
 									</div>
 								</div>
 							</li>
+							<li></li>
 						</ul>
 					</div>
 				</div>
 
 				<div id="rhombus"></div>
+
 			</div>
 		</div>
 		<div class="right">
@@ -43,7 +46,7 @@
 			<div class="ovalOutter" id="theTop">
 				<div class="ovalInner"></div>
 			</div>
-			
+
 		</div>
 	</div>
 	<div class="bottomHalf">
@@ -54,7 +57,7 @@
 
 				</div>
 			</div>
-			
+
 		</div>
 		<div class="right">
 			<div id="healthContainer">
@@ -68,7 +71,7 @@
 								<span id="level">Lv 01</span>
 							</li>
 							<li class="hpList">
-								
+
 								<div id="hpBar">
 								<div id="hp"> HP </div>
 									<div id="hpBarInner">
@@ -156,6 +159,32 @@
 	  	correct: "OAUTH"
 	  }];
 
+		function displayEndMessage(result){
+			if(result === 'won'){
+				document.getElementById("questionText").innerHTML = "You caught the Poke Man!";
+				document.getElementById("choiceA").innerHTML = "";
+			  document.getElementById("choiceB").innerHTML = "";
+			  document.getElementById("choiceC").innerHTML = "";
+			  document.getElementById("choiceD").innerHTML = "";
+				// $('#pokeball').css('transform', 'translateY(300px)')
+			} else {
+				document.getElementById("questionText").innerHTML = "It got away!";
+				document.getElementById("choiceA").innerHTML = "";
+				document.getElementById("choiceB").innerHTML = "";
+				document.getElementById("choiceC").innerHTML = "";
+				document.getElementById("choiceD").innerHTML = "";
+			}
+		}
+
+		function intermediaries(attacker){
+			if(attacker === 'david'){
+				document.getElementById("questionText").innerHTML = "Psydavid used Innovate! It's effective!";
+			} else {
+				document.getElementById("questionText").innerHTML = "You used Nerd Out! It's super effective!";
+			}
+
+		}
+
 	  function populateQuestion(question){
 	  	  curQuestion=question;
 		  document.getElementById("questionText").innerHTML = question.text;
@@ -173,7 +202,20 @@
 				if (numCorrect===2){
 					$('#opponentHP').css('background-color', "red");
 				}
+				if(numCorrect===3){
+					$('#topPoke').append('<img id="pokeball" src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" height="160" width="160"/>');
+					displayEndMessage('won')
+					setTimeout(function () {
+						$('#pokeball').css('transform', 'rotate(360deg)')
+					}, 100);
+				} else {
+					curIndex++;
+					intermediaries('you');
+					setTimeout(function () {
+						populateQuestion(questionObjs[curIndex]);
+					}, 2000);				}
 			}
+
 			else {
 				numWrong++;
 				var widthToSubtract = 50*(2-numWrong);
@@ -181,12 +223,23 @@
 				if (numWrong===1){
 					$('#ownHP').css('background-color', "red");
 				}
+				if(numWrong === 2){
+					// $('#topPoke').fadeOut(2000)
+					$('#topPoke').slideToggle(1000)
+					setTimeout(function () {
+						displayEndMessage('lost')
+					}, 2000);
+				} else {
+					curIndex++;
+					intermediaries('david')
+					setTimeout(function () {
+						populateQuestion(questionObjs[curIndex]);
+					}, 2000);
+				}
 			}
-			curIndex++;
-			populateQuestion(questionObjs[curIndex]);
 		});
   })
-  
+
 </script>
 
 <script type="text/javascript" src="assetts/menuJs.js"></script>

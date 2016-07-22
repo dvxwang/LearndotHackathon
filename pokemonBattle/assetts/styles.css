@@ -1,7 +1,7 @@
 @font-face {
-	font-family: Pokemon; 
+	font-family: Pokemon;
 	src: url('PokemonGB.ttf');
-} 
+}
 
 
 * {
@@ -114,7 +114,7 @@ html, body {
 */
 
 .rectangleInner {
-	z-index: 4; 
+	z-index: 4;
 	width: 95%;
 	height: 90%;
 	background: rgb(240,240,208);
@@ -194,10 +194,10 @@ html, body {
 }
 
 /* 6 */
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 667px) 
-and (orientation : portrait) { 
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : portrait) {
 	#bottomPokemon {
 		top: 60%;
 	}
@@ -207,10 +207,10 @@ and (orientation : portrait) {
  }
 
 /* 5 and 5s */
- @media only screen 
-and (min-device-width : 414px) 
-and (max-device-width : 736px) 
-and (orientation : portrait) { 
+ @media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : portrait) {
 	#bottomPokemon {
 		top: 65%;
 	}
@@ -220,10 +220,10 @@ and (orientation : portrait) {
 }
 
 /* 6s */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) { 
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
 
 	#bottomPokemon {
 		top: 65%;
@@ -264,7 +264,15 @@ and (orientation : portrait) {
 	z-index: 0;
 }
 
+#pokeball {
+	-webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+	transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
 
+#pokeball:hover{
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
 
 
 .innerRectangleBit {
@@ -413,7 +421,7 @@ and (orientation : portrait) {
 #battleText p{
 	display: table-cell;
     vertical-align: middle;
-    
+
 }
 
 #menuText {
@@ -433,7 +441,7 @@ and (orientation : portrait) {
 .menuHalf {
 	width: 45%;
 	font-size: 1.5vw;
-	padding: 2% 2% 2% 4%; 
+	padding: 2% 2% 2% 4%;
 	border: 2px solid transparent;
 }
 
@@ -445,6 +453,6 @@ and (orientation : portrait) {
 }
 
 
-.clearBoth { 
-	clear:both; 
+.clearBoth {
+	clear:both;
 }
