@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,7 +14,7 @@
 <div id="top">
 	<div class="topHalf">
 		<div class="left">
-			<div id="UpperHealthContainer">
+			<div id="upperHealthContainer">
 				<div class="rectangleOutter" id="healthTop">
 					<div class="rectangleInner">
 						<ul class="UpperHpContent">
@@ -38,6 +39,17 @@
 
 				<div id="rhombus"></div>
 
+			</div>
+			<div id='tempDropdown'>
+				<select>
+				  <option selected>PsyDavid</option>
+				  <option>Gronyx</option>
+				  <option>Omachamp</option>
+				  <option>Charmaru</option>
+				  <option>Mr. Tom</option>
+				  <option>Snorlebex</option>
+				  <option>Squirjoe</option>
+				</select>
 			</div>
 		</div>
 		<div class="right">
@@ -185,6 +197,12 @@
 
 		}
 
+	  function updatePokemon(event){
+	  	$('.UpperHpList > #name')[0].innerHTML=event.target.value;
+	  	$('#topPoke').css('background-image', 'url("images/'+event.target.value+'.png")');
+	  }
+
+	  $('#tempDropdown').change(updatePokemon);
 	  function populateQuestion(question){
 	  	  curQuestion=question;
 		  document.getElementById("questionText").innerHTML = question.text;
@@ -244,3 +262,4 @@
 
 <script type="text/javascript" src="assetts/menuJs.js"></script>
 </body>
+</html>
